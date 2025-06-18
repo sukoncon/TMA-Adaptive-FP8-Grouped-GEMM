@@ -1,5 +1,7 @@
 # TMA-Adaptive FP8 Grouped GEMM
 
+This project is based on the original work by DeepSeek, licensed under [the MIT License](LICENSE). You can find the original repository at https://github.com/deepseek-ai/DeepGEMM.
+
 ## Abstract
 Current FP8 grouped GEMM implementations require padding each group to a fixed alignment (e.g., 128), incurring memory and computational overhead. This paper proposes TMA-Adaptive FP8 Grouped GEMM that eliminates padding operation by addressing two critical challenges: (1) the fundamental limitation of a single static TMA descriptor to accommodate varying residual row counts across different groups and (2) strict memory alignment requirements (16-byte global memory/128-byte shared memory) for irregular group boundaries. Our solution employs two key techniques: (a) a predefined TMA descriptor pool that dynamically adapts to residual group dimensions through runtime selection, (b) memory alignment optimization combining overfetch prefetching with constrained block_K sizes (64-element multiples). Experiments demonstrate 1.7% to 20.4% speed up with up to 23.8% memory reduction compared to padding operation plus state-of-the-art FP8 grouped GEMM, while maintaining full numerical equivalence for valid data. This study eliminates the padding compromise, enabling simultaneous achievement of memory efficiency and computational throughput in low-precision computation pipelines for dynamically routed architectures.
 
@@ -48,5 +50,3 @@ Testing grouped contiguous GEMM:
 python setup.py install
 ```
 
-## Original deepgemm
-To get detailed information of original deepgeem, please refer to https://github.com/deepseek-ai/DeepGEMM
