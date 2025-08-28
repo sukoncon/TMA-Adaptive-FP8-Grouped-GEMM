@@ -50,3 +50,15 @@ Testing grouped contiguous GEMM:
 python setup.py install
 ```
 
+## Citation
+```
+@misc{su2025tmaadaptivefp8groupedgemm,
+      title={TMA-Adaptive FP8 Grouped GEMM: Eliminating Padding Requirements in Low-Precision Training and Inference on Hopper}, 
+      author={Zhongling Su and Rong Fu and Weihan Cao and Jianfei Gao and Minxi Jin and Zhilin Pei and Hui Wang},
+      year={2025},
+      eprint={2508.16584},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR},
+      url={https://arxiv.org/abs/2508.16584}, 
+}
+```
